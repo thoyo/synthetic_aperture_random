@@ -1,0 +1,8 @@
+earthengine-api==0.1.164
+oauth2client==4.1.3
+schedule==0.6.0
+numpy==1.16.0
+twython==3.7.0
+python-dotenv==0.10.1
+reverse-geocode==1.3
+future==0.17.1

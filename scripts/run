@@ -1,0 +1,4 @@
+#!/bin/sh
+export PYTHONPATH=/opt/twitter_bot/synthetic_aperture_random
+
+python3.6 ./main.py --automatic

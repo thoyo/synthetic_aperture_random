@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  synthetic_aperture_random:
+    image: thoyo/synthetic_aperture_random:1.0.0
+    volumes:
+    - ${HOME}/.config/earthengine/credentials:/root/.config/earthengine/credentials
+    restart: always
