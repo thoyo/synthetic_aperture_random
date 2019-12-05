@@ -75,7 +75,7 @@ def get_image_info(image, copol_band, crosspol_band):
     timestamp = datetime.utcfromtimestamp(epoch).strftime("%Y-%m-%d %H:%M:%S")
 
     coordinates = np.array(full_info["properties"]["system:footprint"]["coordinates"])
-    mean_coordinates = [(np.mean(coordinates[:, 0]), np.mean(coordinates[:, 1]))]
+    mean_coordinates = [(np.mean(coordinates[:, 1]), np.mean(coordinates[:, 0]))]
     location = reverse_geocode.search(mean_coordinates)
 
     orbit_type = full_info["properties"]["orbitProperties_pass"]
@@ -87,7 +87,7 @@ def get_image_info(image, copol_band, crosspol_band):
     # TODO: get info on if image was acquired at day or night
 
     info = f"{location[0]['country']}, {location[0]['city']} " \
-           f"({mean_coordinates[0][0]:.6f}, {mean_coordinates[0][1]:.6f})\n" \
+           f"({mean_coordinates[0][1]:.6f}, {mean_coordinates[0][0]:.6f})\n" \
            f"{timestamp} UTC\n" \
            f"{orbit_type} orbit\n" \
            f"{copol_band}, {crosspol_band} polarizations"
