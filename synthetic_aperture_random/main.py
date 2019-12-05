@@ -56,7 +56,7 @@ def get_bands_info(image):
 def generate_pseudocolor(image, copol_band, crosspol_band):
     # VV, 2VH, VV / VH / 100.0
     copol = image.select(copol_band)
-    crosspol = image.select(crosspol_band
+    crosspol = image.select(crosspol_band)
 
     red = copol.rename("red")
     green = ee.Image(2).multiply(crosspol).rename("green")
